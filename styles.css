@@ -1,8 +1,8 @@
 body {
   text-align: center;
-  background: linear-gradient(270deg, #0d1b2a, #1b263b, #283149, #3a3f5a);
-  background-size: 300% 300%;
-  animation: gradientShift 12s ease infinite;
+  background: linear-gradient(270deg, #0f0c29, #302b63, #24243e, #0f3460);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,27 @@ body {
   overflow: scroll;
   font-family: 'Orbitron', sans-serif;
   color: #e0e1dd;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: sparkle 20s linear infinite;
+  opacity: 0.8;
+  z-index: -1;
 }
 
 h1 {
@@ -23,6 +44,8 @@ h1 {
   margin: clamp(0.8rem, 4vw, 1.2rem) 0;
   animation: neonStaticGlow 2s ease-in-out infinite alternate;
   line-height: 1.3;
+  position: relative;
+  z-index: 1;
 }
 
 footer {
@@ -36,6 +59,7 @@ footer {
   border-radius: 10px;
   position: relative;
   animation: fadeInUp 1s ease-in-out;
+  z-index: 1;
 }
 footer::after {
   content: 'Designed by Amit Pandey';
@@ -57,6 +81,8 @@ footer::after {
   background: rgba(27, 38, 59, 0.7);
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
+  position: relative;
+  z-index: 1;
 }
 
 .drum {
@@ -187,6 +213,11 @@ footer::after {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes sparkle {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-200px); }
 }
 
 @keyframes neonStaticGlow {
