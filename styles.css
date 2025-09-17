@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background: linear-gradient(270deg, #0f0c29, #302b63, #24243e, #0f3460);
+  background: linear-gradient(270deg, #0f0c29, #1c193b, #24243e, #060b11);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   min-height: 100vh;
